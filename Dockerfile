@@ -8,3 +8,4 @@ RUN ["rpm", "-Uvh", "remi-release-7*.rpm", "epel-release-7*.rpm"]
 RUN ["yum", "install", "--enablerepo=remi-php55", "-y", "php-cli", "php-pgsql", "php-xml"]
 RUN curl -s https://getcomposer.org/installer | php
 RUN ["mv", "composer.phar", "/usr/local/bin/composer"]
+RUN sed -i "s/;date.timezone =.*/date.timezone = Europe\/Moscow/" /etc/php.ini
