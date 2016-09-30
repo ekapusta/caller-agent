@@ -9,3 +9,10 @@ RUN ["yum", "install", "--enablerepo=remi-php55", "-y", "php-cli", "php-pgsql", 
 RUN curl -s https://getcomposer.org/installer | php
 RUN ["mv", "composer.phar", "/usr/local/bin/composer"]
 RUN sed -i "s/;date.timezone =.*/date.timezone = Europe\/Moscow/" /etc/php.ini
+
+RUN wget http://sourceforge.net/projects/lame/files/lame/3.99/lame-3.99.tar.gz && \
+  tar zxvf lame-3.99.tar.gz && \
+  cd lame-3.99 && \
+  ./configure && \
+  make && \
+  make install
