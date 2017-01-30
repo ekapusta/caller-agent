@@ -1,5 +1,6 @@
 FROM dougbtv/asterisk
 MAINTAINER Dmitry Romanov "dmitry.romanov85@gmail.com"
+USER root
 
 RUN ["yum", "install", "-y", "sudo", "wget", "mc"]
 RUN ["wget", "http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-9.noarch.rpm"]
